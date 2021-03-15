@@ -1,13 +1,27 @@
-body {
+/* @import url('https://fonts.googleapis.com/css2?family=Blinker&display=swap'); */
+
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header-cont{
+  width:100%;
+}
+
+.header-logo{
+  
+  height:100px;
+  width:100px;
+  margin: -25px 0;
+}
+
+.headr{
+  min-height:10vh;
+}
+
+.header-right{
+  margin-left:auto;
+  margin-right:5px;
 }
