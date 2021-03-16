@@ -309,20 +309,20 @@ const Description = styled.div`
     }
 `
 
-const Share = styled.div`
-    display:flex;
-    justify-content:space-between;
-    height:10px;
-    background:;
-    margin:0px 0px;
+// const Share = styled.div`
+//     display:flex;
+//     justify-content:space-between;
+//     height:10px;
+//     background:;
+//     margin:0px 0px;
     
-`
-const LeftCont = styled.div`
-    span{
-        cursor:pointer;
-        margin-left:28px;
-    }
-`
+// `
+// const LeftCont = styled.div`
+//     span{
+//         cursor:pointer;
+//         margin-left:28px;
+//     }
+// `
 
 // const RightCont = styled.div`
 //     span{

@@ -1,10 +1,10 @@
 import React from 'react'
-
+import CourseDetail from '../components/CourseDetail'
 
 const CourseScreen = () => {
     return (
         <div>
-            Hii
+            <CourseDetail />
         </div>
     )
 }
