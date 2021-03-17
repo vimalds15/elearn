@@ -200,8 +200,6 @@ const CoursesList = () => {
 export default CoursesList
 
 const Container = styled.div`
-    // background:red;
-    height:100vh;
     
     @media(min-width:1200px){
         margin-left:15%;

@@ -6,21 +6,25 @@ import Caroussel from './components/Carousel'
 import Header from './components/Header'
 import { BrowserRouter as Router,Route,Switch } from 'react-router-dom'
 import CourseScreen from './screens/CourseScreen';
+import LoginScreen from './screens/LoginScreen';
+import SignUpScreen from './screens/SignUpScreen';
+import UploadScreen from './screens/UploadScreen';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Caroussel />
-      <Router>
+       <Router>
+        <Header />
+        <Caroussel />
         <Switch>
-          <Route exact path="/">
-            <HomeScreen />
-          </Route>
-          <Route exact path='/course'>
-            <CourseScreen />
-          </Route>
+          <Route exact path="/" component={HomeScreen} />
+          <Route exact path='/course' component={CourseScreen} />
+          <Route exact path='/login' component={LoginScreen} />
+          <Route exact path='/signup' component={SignUpScreen} />
+          <Route exact path='/new' component={UploadScreen} />
         </Switch>
+        <Footer />
       </Router>  
     </div>
   );

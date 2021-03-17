@@ -1,4 +1,4 @@
-.login-cont{
+.sgn-cont{
     margin:0;
     padding-bottom:50px;
     display:flex;
@@ -6,14 +6,15 @@
     justify-content:center;
 }
 
-.login-wrapper{
+.sgn-wrapper{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 60px;
+
+    /* height:300px; */
     min-width: 400px;
-    padding:30px;
     border-radius: 15px;
     background:rgb(255, 255, 255);
     
@@ -22,16 +23,16 @@
 -moz-box-shadow: 0px 0px 29px 10px rgba(0,0,0,0.75);
 }
 
-.login-head{
+.sgn-head{
     margin-top:50px;
     margin-bottom:20px;
     text-align:center;
 }
-.login-head img{
+.sgn-head img{
     height:100px;
 }
 
-.login-head h3{
+.sgn-head h3{
     color:rgb(104, 104, 104);
     font-weight: bold;
     /* text-transform: capitalize; */
@@ -39,7 +40,8 @@
 
 
 
-.login-submit{
+
+.sgn-submit{
     height:40px;
     width: 100px;
     border-radius: 5px;
@@ -47,7 +49,7 @@
     
 }
 
-.login-submit input{
+.sgn-submit input{
     
     width: 100%;
     height:100%;
@@ -56,19 +58,25 @@
     border:none;
     background-color:rgb(110, 108, 108);
 }
-.lgn-mail label{
+.sgn-mail label{
     margin-top:10px;
     margin-bottom: -10px;
     color:rgb(219, 0, 0);
     font-weight: bold;
 }
-.lgn-pwd label{
+.sgn-pwd label{
     color:rgb(219, 0, 0);
     margin-bottom: -10px;
     font-weight: bold;
 }
 
-.lgn-mail input{
+.sgn-pwd1 label{
+    color:rgb(219, 0, 0);
+    margin-bottom: -10px;
+    font-weight: bold;
+}
+
+.sgn-mail input{
     
     height: 35px;
     width: 100%;
@@ -80,7 +88,18 @@
     transition: all .5s linear;
 }
 
-.lgn-pwd input{
+.sgn-pwd input{
+    height: 35px;
+    width: 100%;
+    border-radius: 5px;
+    outline:none;
+    border:2px solid rgb(185, 183, 183);
+    padding: 10px;
+    transition:all .5s linear;
+    margin-bottom: 10px;
+}
+
+.sgn-pwd1 input{
     height: 35px;
     width: 100%;
     border-radius: 5px;
@@ -90,29 +109,38 @@
     transition:all .5s linear;
 }
 
-.lgn-mail input:hover {
+.sgn-mail input:hover {
    
     border:2px solid red; 
 }
 
-.lgn-pwd input:hover {
+.sgn-pwd input:hover {
     border:2px solid red; 
 }
 
-.login-submit input:hover{
+.sgn-pwd1 input:hover {
+    border:2px solid red; 
+}
+
+
+.sgn-submit input:hover{
     transition: all .5s linear;
     background-color:red;
 }
 
-.lgn-mail input:focus{
+.sgn-mail input:focus{
     border:2px solid red; 
 }
 
-.lgn-pwd input:focus{
+.sgn-pwd input:focus{
     border:2px solid red; 
 }
 
-.sgnup-redirect{
+.sgn-pwd1 input:focus{
+    border:2px solid red; 
+}
+
+.login-redirect{
     display:flex;
     align-items:center;
     justify-content:center;
@@ -120,18 +148,18 @@
     margin-top:10px;
 }
 
-.sgnup-redirect p{
+.login-redirect p{
     margin-top: 20px;
     align-self:bottom;
 }
 
-.sgnup-redirect span {
+.login-redirect span {
     color:red;
     font-weight: bold;
     cursor: pointer;
 }
 
-.login-submit input:focus{
+.signup-submit input:focus{
     transition: all .5s linear;
     background-color:red;
     transform: translateY(-5px);
