@@ -9,7 +9,6 @@ const SignUp = () => {
             <div className='sgn-wrapper'>
                 <div className='sgn-head'>
                     <img src={logo} alt='logo'/>
-                    {/* <h3>sgn</h3> */}
                 </div>
                 <div className='sgn-content'>
                     <div className='sgn-mail'>

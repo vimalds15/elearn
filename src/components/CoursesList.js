@@ -13,7 +13,7 @@ import img10 from '../images/courses/img10.jpg'
 import img11 from '../images/courses/img11.jpg'
 import img12 from '../images/courses/img12.jpg'
 
-const CoursesList = () => {
+const CoursesList = ({ course }) => {
     return (
         <Container>
             <Heading>
@@ -29,16 +29,16 @@ const CoursesList = () => {
                     <img src={img} alt='imag' />
                 </Image>
                     <Title>
-                    
-                    <p>C++ Course in 4 hours</p>
+                        {console.log(course)}
+                        <p>{course}</p>
                 </Title>
                     <Description>
-                        <p>Course by: FreeCodeCamp </p>
+                        <p>{course} </p>
                         <h6>Rating <span><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i></span></h6>
                     </Description>
                 </Course>
                 
-                <Course>
+                {/* <Course>
             <Image>
                     <img src={img2} alt='imag' />
                 </Image>
@@ -190,7 +190,7 @@ const CoursesList = () => {
                 <Description><p>Course by: CodeBinX </p><h6>Rating<span><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i></span></h6></Description>
 
                 
-                </Course>
+                </Course> */}
 
             </CourseCont>
         </Container>
@@ -264,6 +264,7 @@ const Course = styled.div`
     width:350px;
     min-width:300px;
     margin:30px;
+    padding-bottom:50px;
     background:white;
     box-shadow: -1px 5px 13px 2px rgba(0,0,0,0.81);
     -webkit-box-shadow: -1px 5px 13px 2px rgba(0,0,0,0.81);

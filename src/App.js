@@ -1,6 +1,5 @@
 // import logo from './logo.svg';
 import React from 'react'
-import './css/bootstrap.min.css'
 import HomeScreen from './screens/HomeScreen.js';
 import Caroussel from './components/Carousel'
 import Header from './components/Header'
