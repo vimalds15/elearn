@@ -2,13 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/bootstrap.min.css'
 import './css/index.css';
+
+import store from './store'
+import { Provider } from 'react-redux'
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  // <Provider store={store}>
+  <Provider store={store}>
     <App />
-  // </Provider>
+   </Provider>
   ,
 
 document.getElementById('root')

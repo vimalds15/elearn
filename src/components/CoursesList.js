@@ -1,21 +1,20 @@
-import React,{useEffect,useState} from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch,useSelector } from 'react-redux'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom'
 
-import axios from 'axios'
+
 import Rating from './Rating';
+import { listCourses } from '../actions/CourseActions';
 
 const CoursesList = () => {
-    const [state, setstate] = useState([])
-
-    async function dat() {
-        const { data } = await axios.get('/api/courselist/')
-        setstate(data)
-        console.log(data)
-    }
+    
+    const dispatch = useDispatch()
+    const courseList = useSelector(state => state.courseList)
+    const {error,loading,courses} = courseList
 
     useEffect(() => {
-        dat()
+        dispatch(listCourses())
     },[])
 
     return (
@@ -29,7 +28,7 @@ const CoursesList = () => {
             </Heading>
             <CourseCont>
 
-                {state.map(data => 
+                {courses.map(data => 
             <Course>
                 <Link to={`course/${data.id}`} >    
                 <Image>
