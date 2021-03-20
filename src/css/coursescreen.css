@@ -20,11 +20,13 @@
     
 }
 
-.course-det-video iframe{
+.course-det-video video{
     height: 100%;
     width:100%;
-    padding:0 50px;
+    padding:0 30px;
+   
 }
+
 
 .course-det-description{
     padding:40px 0px 0px 30px;

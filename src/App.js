@@ -18,7 +18,7 @@ function App() {
         <Caroussel />
         <Switch>
           <Route exact path="/" component={HomeScreen} />
-          <Route exact path='/course' component={CourseScreen} />
+          <Route exact path='/course/:id' component={CourseScreen} />
           <Route exact path='/login' component={LoginScreen} />
           <Route exact path='/signup' component={SignUpScreen} />
           <Route exact path='/new' component={UploadScreen} />

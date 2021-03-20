@@ -1,19 +1,23 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import styled from 'styled-components';
-import img from '../images/courses/img.jpg'
-import img2 from '../images/courses/img2.jpg'
-import img3 from '../images/courses/img3.jpg'
-import img4 from '../images/courses/img4.jpg'
-import img5 from '../images/courses/img5.jpg'
-import img6 from '../images/courses/img6.jpg'
-import img7 from '../images/courses/img7.jpg'
-import img8 from '../images/courses/img8.jpg'
-import img9 from '../images/courses/img9.jpg'
-import img10 from '../images/courses/img10.jpg'
-import img11 from '../images/courses/img11.jpg'
-import img12 from '../images/courses/img12.jpg'
+import { Link } from 'react-router-dom'
 
-const CoursesList = ({ course }) => {
+import axios from 'axios'
+import Rating from './Rating';
+
+const CoursesList = () => {
+    const [state, setstate] = useState([])
+
+    async function dat() {
+        const { data } = await axios.get('/api/courselist/')
+        setstate(data)
+        console.log(data)
+    }
+
+    useEffect(() => {
+        dat()
+    },[])
+
     return (
         <Container>
             <Heading>
@@ -24,173 +28,28 @@ const CoursesList = ({ course }) => {
                 
             </Heading>
             <CourseCont>
+
+                {state.map(data => 
             <Course>
-            <Image>
-                    <img src={img} alt='imag' />
+                <Link to={`course/${data.id}`} >    
+                <Image>
+                    <img src={data.thumbnail} alt='imag' />
                 </Image>
                     <Title>
-                        {console.log(course)}
-                        <p>{course}</p>
-                </Title>
-                    <Description>
-                        <p>{course} </p>
-                        <h6>Rating <span><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i></span></h6>
-                    </Description>
-                </Course>
-                
-                {/* <Course>
-            <Image>
-                    <img src={img2} alt='imag' />
-                </Image>
-                <Title>
-                    <p>Java tutorial for beginners</p>
-                </Title>
-                    <Description>
-                        <p>Course by: Programming with Mosh </p>
-                        <h6>Rating<span><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i></span></h6>
-                    </Description>
-                
-                </Course>
-                
-                <Course>
-            <Image>
-                    <img src={img3} alt='imag' />
-                </Image>
-                <Title>
-                    <p>JavaScript Crash Course</p>
+                        <p>{data.title}</p>
                     </Title>
+                </Link>
                     <Description>
-                        <p>Course by: Traversy Media </p>
-                        <h6>Rating<span><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i></span></h6>
+                            <p>Course by: {data.courseby}</p>
+                            <div className='course-rating'>
+                                <h6>Rating: </h6>
+                                <div className='course-rat'>
+                                    <Rating value={data.rating} />    
+                                </div>
+                                </div>    
                     </Description>
-                    
-                
                 </Course>
-                
-
-                <Course>
-            <Image>
-                    <img src={img4} alt='imag' />
-                </Image>
-                <Title>
-                    <p>Slack Clone (React)</p>
-                </Title>
-                <Description>
-                        <p>Course by: Clever Programmer </p>
-                        <h6>Rating<span><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i></span></h6>
-                    </Description>
-                
-                </Course>
-                
-
-                <Course>
-            <Image>
-                    <img src={img5}  alt='imag' />
-                </Image>
-                <Title>
-                    <p>Android Studio Full Course</p>
-                </Title>
-                <Description>
-                        <p>Course by: Code with Harry </p>
-                        <h6>Rating<span><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i></span></h6>
-                    </Description>
-                
-                </Course>
-                
-
-                <Course>
-            <Image>
-                    <img src={img6}  alt='imag' />
-                </Image>
-                <Title>
-                    <p>React Native Full tutorial</p>
-                </Title>
-                <Description>
-                        <p>Course by: Academind </p>
-                        <h6>Rating<span><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i></span></h6>
-                    </Description>
-                
-                </Course>
-                
-
-                <Course>
-            <Image>
-                    <img src={img7}  alt='imag' />
-                </Image>
-                <Title>
-                    <p>Django Full Course</p>
-                </Title>
-                <Description>
-                        <p>Course by: Clever Programmer </p>
-                        <h6>Rating<span><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i></span></h6>
-                    </Description>
-                
-                </Course>
-                
-
-                <Course>
-            <Image>
-                <img src={img8} alt='imag' />
-                </Image>
-                <Title>
-                    <p>PHP Full Course</p>
-                </Title>
-                <Description>
-                        <p>Course by: Matt Engineering Equipments </p>
-                        <h6>Rating<span><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i></span></h6>
-                    </Description>
-                
-                </Course>
-                
-
-                <Course>
-            <Image>
-                    <img src={img9} alt='imag' />
-                </Image>
-                <Title>
-                    <p>Flutter Course for Beginners</p>
-                </Title>
-                <Description><p>Course by: Vetri Bright </p><h6>Rating<span><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i></span></h6></Description>
-                
-                </Course>
-                
-                <Course>
-            <Image>
-                    <img src={img10}  alt='imag' />
-                </Image>
-                <Title>
-                    <p>Angular Complete Course</p>
-                </Title>
-                <Description><p>Course by: Vetri Bright </p><h6>Rating<span><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i></span></h6></Description>
-
-                
-                </Course>
-
-
-                <Course>
-            <Image>
-                    <img src={img11}  alt='imag' />
-                </Image>
-                <Title>
-                    <p>Node JS Full Course</p>
-                </Title>
-                <Description><p>Course by: VJ TECHNO WIZARD </p><h6>Rating<span><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i></span></h6></Description>
-
-                
-                </Course>
-
-
-                <Course>
-            <Image>
-                    <img src={img12}  alt='imag' />
-                </Image>
-                <Title>
-                    <p>Asp.Net MVC Full Course</p>
-                </Title>
-                <Description><p>Course by: CodeBinX </p><h6>Rating<span><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i></span></h6></Description>
-
-                
-                </Course> */}
+                )}
 
             </CourseCont>
         </Container>
@@ -264,11 +123,16 @@ const Course = styled.div`
     width:350px;
     min-width:300px;
     margin:30px;
-    padding-bottom:50px;
     background:white;
+    padding-bottom:50px;
     box-shadow: -1px 5px 13px 2px rgba(0,0,0,0.81);
     -webkit-box-shadow: -1px 5px 13px 2px rgba(0,0,0,0.81);
     -moz-box-shadow: -1px 5px 13px 2px rgba(0,0,0,0.81);
+
+    :hover{
+        transition:all .5s;
+        transform:translateY(10px);
+    }
 
     @media(min-width:1110px){
         
@@ -297,14 +161,28 @@ const Title = styled.div`
 `
 
 const Description = styled.div`
-    height:27%;
+    
     background:#f1f1f1;
-    padding:7px;
-    margin-bottom:2px;
+    padding:7px 7px 30px 7px;
+   
     overflow:hidden;
 
     i{
         color:rgb(251,225,0);
+    }
+
+    .course-rating{
+        display:flex;
+        align-items:center;
+
+        h6{
+            margin-top:8px;
+        }
+
+        .course-rat{
+            margin-left:5px;
+            margin-bottom:2.px;
+        }
     }
 `
 
