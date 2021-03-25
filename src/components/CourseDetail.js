@@ -1,20 +1,18 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React, {  useEffect } from 'react'
+import { useDispatch,useSelector } from 'react-redux'
 import '../css/coursescreen.css'
+import { detailCourses } from '../actions/CourseActions'
 
-const CourseDetail = () => {
-    const [state, setstate] = useState([])
-    
-    async function dat() {
-        const { data } = await axios.get(`/api/courselist/${2}/`)
-        setstate(data)
-        console.log(data)
-    }
+const CourseDetail = ({match}) => {
+    const dispatch = useDispatch()
+    const courseDetail = useSelector(state => state.courseDetail)
+    const {loading,error,course} = courseDetail
 
     useEffect(() => {
-        dat()
-        console.log(state)
-    },[])
+        
+        dispatch(detailCourses(match.params.id))
+       
+    },[dispatch,match])
 
 
     return (
@@ -22,11 +20,11 @@ const CourseDetail = () => {
         <div> 
                 <div className='course-det-cont'>
                     <div className='course-det-head'>
-                        <h3>{state.title}</h3>
+                        <h3>{course.title}</h3>
                         <hr />
                     </div>
                     <div className='course-det-video'>
-                        <video  src={state.video} controls ></video>
+                        <video  src={course.video} controls ></video>
                     </div>
                     <div className='course-det-description'>
                         <h4>Course Description</h4>
