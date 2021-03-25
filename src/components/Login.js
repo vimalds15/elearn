@@ -11,19 +11,21 @@ const Login = () => {
                     <img src={logo} alt='logo'/>
                     {/* <h3>Login</h3> */}
                 </div>
+                
                 <div className='login-content'>
+                <form>
                     <div className='lgn-mail'>
                     <label for="email">E-mail:</label>
-                    <input type="email" placeholder='Enter you mail id' name='email' />
+                    <input type="email" placeholder='Enter you mail id' name='email' required/>
                     </div>
                     <div className='lgn-pwd'>
                     <label for="pwd">Password:</label>
-                    <input placeholder='Enter you password' type="password" name='pwd' />
+                    <input placeholder='Enter you password' type="password" name='pwd' required/>
                     </div>
                     <div className='login-submit'>
                     <input id='lgn-submit' type="submit" value='Login' />
                     </div>
-
+                </form>
                     <LinkContainer to='/signup'>
                     <div className='sgnup-redirect'>
                         <p>Not an User? <span className='sng-link'>Sign Up!</span></p>

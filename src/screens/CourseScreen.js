@@ -1,10 +1,10 @@
 import React from 'react'
 import CourseDetail from '../components/CourseDetail'
 
-const CourseScreen = () => {
+const CourseScreen = ({ match }) => {
     return (
         <div>
-            <CourseDetail />
+            <CourseDetail match={match} />
         </div>
     )
 }
