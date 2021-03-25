@@ -21,7 +21,7 @@ function App() {
           <Route exact path='/course/:id' component={CourseScreen} />
           <Route exact path='/login' component={LoginScreen} />
           <Route exact path='/signup' component={SignUpScreen} />
-          <Route exact path='/new' component={UploadScreen} />
+          <Route exact path='/courses/new' component={UploadScreen} />
         </Switch>
         <Footer />
       </Router>  
