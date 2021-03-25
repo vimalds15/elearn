@@ -11,7 +11,7 @@ const Caroussel = () => {
     return (
         <MasterCont>
         <Container id="cars">
-            <Carousel  pause='false'>
+            <Carousel >
                 <Carousel.Item interval={3200}>
                     <img
                     className="d-block w-100"
@@ -69,6 +69,7 @@ const Container = styled.div`
 -webkit-box-shadow: -1px 1px 10px 5px rgba(0,0,0,0.75);
 -moz-box-shadow: -1px 1px 10px 5px rgba(0,0,0,0.75);
 box-shadow: -1px 1px 10px 5px rgba(0,0,0,0.75);
+
 @media(min-width:1150px){
     margin:25px 0;
     width:70%;
