@@ -1,36 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch,useSelector } from 'react-redux'
+import React from 'react'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom'
 
 
 import Rating from './Rating';
-import { listCourses } from '../actions/CourseActions';
 
-const CoursesList = () => {
+const CoursesList = ({ data }) => {
     
-    const dispatch = useDispatch()
-    const courseList = useSelector(state => state.courseList)
-    const {error,loading,courses} = courseList
-
-    useEffect(() => {
-        dispatch(listCourses())
-    },[])
 
     return (
-        <Container>
-            <Heading>
-                <div className='course-title-cont'>
-                    <h1>Courses</h1>
-                    <hr />    
-                </div>
-                
-            </Heading>
-            <CourseCont>
+            
+            
 
-                {courses.map(data => 
+                
             <Course>
-                <Link to={`course/${data.id}`} >    
+                <Link to={`/course/${data._id}`} >    
                 <Image>
                     <img src={data.thumbnail} alt='imag' />
                 </Image>
@@ -48,60 +32,19 @@ const CoursesList = () => {
                                 </div>    
                     </Description>
                 </Course>
-                )}
 
-            </CourseCont>
-        </Container>
+  
     )
 }
 
 export default CoursesList
 
-const Container = styled.div`
-    
-    @media(min-width:1200px){
-        margin-left:15%;
-        margin-right:15%;
-    }
-    
-`
-
-const Heading = styled.div`
-    display:flex;
-    flex-direction:column;
-    
-    h1{
-    color:grey;
-    font-weight:bold;
-    margin-left:39px;
-    margin-top:20px;
-    
-    
-    }
-
-    hr{
-        margin-top:-10px;
-        align-self:center;
-        
-    }
-
-    .course-title-cont{
-        align-self:center;
-        width:80%;
-    }
-
-   
-    
-`
 
 
-const CourseCont = styled.div`
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-wrap:wrap;
 
-`
+
+
+
 
 
 const Image = styled.div`
@@ -162,7 +105,7 @@ const Title = styled.div`
 const Description = styled.div`
     
     background:#f1f1f1;
-    padding:7px 7px 30px 7px;
+    padding:7px 7px 0px 7px;
    
     overflow:hidden;
 
@@ -185,25 +128,5 @@ const Description = styled.div`
     }
 `
 
-// const Share = styled.div`
-//     display:flex;
-//     justify-content:space-between;
-//     height:10px;
-//     background:;
-//     margin:0px 0px;
-    
-// `
-// const LeftCont = styled.div`
-//     span{
-//         cursor:pointer;
-//         margin-left:28px;
-//     }
-// `
 
-// const RightCont = styled.div`
-//     span{
-//         cursor:pointer;
-//         margin-right:8px;
-//     }
-// `
 
