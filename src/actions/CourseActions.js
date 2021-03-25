@@ -14,7 +14,7 @@ export const listCourses = () => async (dispatch) => {
     try {
         dispatch({ type: COURSE_LIST_REQUEST })
         
-        const { data } = await axios.get('/api/courselist/')
+        const { data } = await axios.get('/api/course/')
         
         dispatch({type:COURSE_LIST_SUCCESS,payload: data})
     } catch (error) {
@@ -30,6 +30,19 @@ export const listCourses = () => async (dispatch) => {
 
 export const detailCourses = (id) => async (dispatch) => {
     try {
-        dispatch({type: })
+        dispatch({ type: COURSE_DETAIL_REQUEST })
+        
+        const { data } = await axios.get(`/api/course/${id}/`)
+        
+        dispatch({type: COURSE_DETAIL_SUCCESS, payload:data})
+    } catch (error) {
+        dispatch({
+            type: COURSE_DETAIL_FAIL,
+            payload: error.response &&
+                error.response.data.message ?
+                error.response.data.message
+                :error.message,
+        
+        })
     }
 } 
