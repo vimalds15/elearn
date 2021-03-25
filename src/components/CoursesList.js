@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 import Rating from './Rating';
 
 const CoursesList = ({ data }) => {
-    
 
     return (
             
@@ -127,6 +126,3 @@ const Description = styled.div`
         }
     }
 `
-
-
-
