@@ -25,9 +25,10 @@ const HomeScreen = () => {
                 </div>
             </Heading>
             <CourseCont>
-            {courses.map(course =>
+            {courses?.map(course =>
                 <CoursesList data={course} />
-                )}
+                    )
+                    }
             </CourseCont>
             </CourseWrapper>
             <CourseNewIcon />
@@ -39,6 +40,7 @@ export default HomeScreen
 
 const Container = styled.div`
     background-color:white;
+    min-height:80vh;
     
 `
 const CourseWrapper = styled.div`
