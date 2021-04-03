@@ -13,14 +13,15 @@ const CoursesList = ({ data }) => {
 
                 
             <Course>
-                <Link to={`/course/${data._id}`} >    
+                   
                 <Image>
                     <img src={data.thumbnail} alt='imag' />
-                </Image>
+            </Image>
+                    <Link to={`/course/${data._id}`}>
                     <Title>
                         <p>{data.title}</p>
                     </Title>
-                </Link>
+                    </Link>
                     <Description>
                             <p>Course by: {data.courseby}</p>
                 <div className='course-rating'>
@@ -29,12 +30,15 @@ const CoursesList = ({ data }) => {
                                 <div className='course-rat'>
                                     <Rating value={data.rating} />    
                         </div>
-                        </div>
+                    </div>
+                    <Link to={`/course/${data._id}`} >
                     <div className='enroll'>
                         <h6>Watch</h6>
                         <PlayArrowIcon />
                         </div>
+                    </Link>
                     </div>
+                    
                     </Description>
                 </Course>
 
@@ -57,7 +61,7 @@ height:180px;
 width:100%;
 
 img{
-    cursor:pointer;
+    // cursor:pointer;
     height:180px;
     width:100%;
     object-fit:cover;

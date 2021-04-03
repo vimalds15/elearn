@@ -25,7 +25,9 @@ const CourseDetail = ({match}) => {
                     </div>
                     <div className='course-det-video'>
                         <video  src={course.video} controls ></video>
-                    </div>
+                </div>
+                
+                {/* Data has to be pulled from backend (Needs to be implemented) */}
                     <div className='course-det-description'>
                         <h4>Course Description</h4>
                         <hr />
