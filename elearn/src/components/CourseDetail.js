@@ -1,7 +1,7 @@
 import React, {  useEffect } from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 import '../css/coursescreen.css'
-import { detailCourses } from '../actions/CourseActions'
+import { detailCourses } from '../redux/actions/CourseActions'
 
 const CourseDetail = ({match}) => {
     const dispatch = useDispatch()
@@ -17,7 +17,7 @@ const CourseDetail = ({match}) => {
 
     return (
         
-        <div> 
+        <div className='course-det-total'> 
                 <div className='course-det-cont'>
                     <div className='course-det-head'>
                         <h3>{course.title}</h3>
@@ -25,7 +25,9 @@ const CourseDetail = ({match}) => {
                     </div>
                     <div className='course-det-video'>
                         <video  src={course.video} controls ></video>
-                    </div>
+                </div>
+                
+                {/* Data has to be pulled from backend (Needs to be implemented) */}
                     <div className='course-det-description'>
                         <h4>Course Description</h4>
                         <hr />

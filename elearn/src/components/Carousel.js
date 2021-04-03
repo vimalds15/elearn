@@ -49,7 +49,7 @@ const MasterCont = styled.div`
     display:flex;
     align-items:center;
     justify-content:center;
-    
+    background:#171717;
      
     img{
         height:200px;

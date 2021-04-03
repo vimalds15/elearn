@@ -8,9 +8,7 @@ const reducer = combineReducers({
     courseDetail: courseDetailReducers,
 })
 
-const initialState = {
-
-}
+const initialState = {}
 
 const middleware = [thunk]
 

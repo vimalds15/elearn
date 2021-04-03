@@ -7,8 +7,8 @@ import logo from "../images/logo.png";
 const Header = () => {
   return (
     <div className="header-cont">
-      <Navbar className="headr" sticky="top" bg="light" expand="lg">
-        <div>
+      <Navbar className="headr" sticky="top" bg="dark" expand='lg' variant='dark'>
+        <div className='header-left'>
 
           <LinkContainer to='/'>
           <Navbar.Brand >

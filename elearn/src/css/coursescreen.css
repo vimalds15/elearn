@@ -1,15 +1,27 @@
+.course-det-total{
+    background:#171717;
+}
+
 .course-det-cont{
     padding:30px;
+    
 }
 
 .course-det-cont h4{
+    color:rgb(200, 200, 200);
     text-transform:capitalize;
+}
+.course-det-cont hr{
+    background-color:rgb(200, 200, 200);
 }
 
 
 .course-det-head h3{
     padding-top:10px;
-    color:grey;
+    color:rgb(226, 226, 226);
+}
+.course-det-head hr{
+    background-color:rgb(226, 226, 226);
 }
 
 .course-det-video{
@@ -29,17 +41,20 @@
 
 
 .course-det-description{
+    color:rgb(200, 200, 200);
     padding:40px 0px 0px 30px;
     
 }
 
 
 .course-det-features{
+    color:rgb(200, 200, 200) ;
     padding:30px;
 }
 
 
 .course-det-features ul{
+    color:rgb(200, 200, 200);
     padding-left:30px;
 }
 
@@ -47,7 +62,11 @@
     padding-left:30px;
 }
 .course-det-rating label{
+    color:rgb(200, 200, 200);
     padding-right:10px;
+}
+.course-det-rating select{
+    background-color:rgb(200,200,200);
 }
 
 
