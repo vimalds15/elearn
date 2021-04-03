@@ -1,6 +1,7 @@
 .login-cont{
     margin:0;
     padding-bottom:50px;
+    background:#171717;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -15,7 +16,7 @@
     min-width: 400px;
     padding:30px;
     border-radius: 15px;
-    background:rgb(255, 255, 255);
+    background-color:#171717 !important;
     
     box-shadow: 0px 0px 29px 10px rgba(0,0,0,0.75);
 -webkit-box-shadow: 0px 0px 29px 4px rgba(0,0,0,0.75);
@@ -75,19 +76,24 @@
     margin-bottom: 10px;
     border-radius: 5px;
     outline:none;
+    color:red !important;
+    text-decoration-color: red;
     border:2px solid rgb(185, 183, 183);
     padding: 10px;
     transition: all .5s linear;
+    background-color:#171717 !important;
 }
 
 .lgn-pwd input{
     height: 35px;
     width: 100%;
     border-radius: 5px;
+    color:red;
     outline:none;
     border:2px solid rgb(185, 183, 183);
     padding: 10px;
     transition:all .5s linear;
+    background-color:#171717 !important;
 }
 
 .lgn-mail input:hover {

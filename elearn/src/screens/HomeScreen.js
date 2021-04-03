@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 import CoursesList from '../components/CoursesList'
-import { listCourses } from '../actions/CourseActions'
+import { listCourses } from '../redux/actions/CourseActions'
 import styled from 'styled-components'
 import CourseNewIcon from '../components/CourseNewIcon'
 
@@ -39,7 +39,7 @@ const HomeScreen = () => {
 export default HomeScreen
 
 const Container = styled.div`
-    background-color:white;
+    background-color:#171717;
     min-height:80vh;
     
 `
@@ -55,7 +55,7 @@ const Heading = styled.div`
     flex-direction:column;
     
     h1{
-    color:grey;
+    color:#dfdfdf;
     font-weight:bold;
     margin-left:39px;
     margin-top:20px;
@@ -66,6 +66,7 @@ const Heading = styled.div`
     hr{
         margin-top:-10px;
         align-self:center;
+        background-color:gray;
         
     }
 

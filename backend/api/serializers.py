@@ -7,7 +7,11 @@ class CourseSerializer(ModelSerializer):
         model = Course
         fields = '__all__'
 
-class UserSerializer(ModelSerializer):
+
+class GetFullUserSerializer(ModelSerializer):
     class Meta:
         model = User
-        fields = '__all__'
+        fields = ('id', 'username', 'is_superuser', 'first_name', 'last_name')
+        
+class UserSerializerWithToken(ModelSerializer):
+    pass
