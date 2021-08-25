@@ -1,0 +1,4 @@
+{
+    "mongoURI":"mongodb+srv://vimalds:vimalds@elearn-cluster0.g2aqj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "jwtSecret":"secret"
+}
