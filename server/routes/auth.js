@@ -9,15 +9,19 @@ const router = express.Router();
 const User = require("../models/User");
 
 const validation = [
-  check("email", "Please enter your email address").isEmail(),
-  check("password", "Please enter your password").exists(),
-];
+    check('email',"Require email").isEmail(),
+    check("password","Require Password").exists()
+]
 
 // @route   POST    api/auth
 // @desc    Auth User & get token
 // @access  Public
 
-router.post("/", validation, async (req, res) => {
+
+router.post("/", [
+    check('email',"Require email").isEmail(),
+    check("password","Require Password").exists()
+], async (req, res) => {
     const errors = validationResult(req);
 
     if(!errors.isEmpty()) return res.status(400).json({errors:errors.array()})
@@ -25,7 +29,7 @@ router.post("/", validation, async (req, res) => {
     const {email,password} = req.body;
 
     try {
-        let user = User.findOne({email});
+        let user = await User.findOne({email});
         if (!user) return res.status(400).json({msg:"Invalid Credentials"})
 
         const isMatch = await bcrypt.compare(password,user.password);
@@ -48,3 +52,5 @@ router.post("/", validation, async (req, res) => {
         console.error(error.message)
     }
 });
+
+module.exports = router
